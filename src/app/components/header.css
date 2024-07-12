@@ -24,3 +24,24 @@
     width: 24px;
     transition: all 4s;
 }
+
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .dropdown-menu.open {
+    max-height: 500px; 
+  }
+  
+  .sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .sub-menu.open {
+    max-height: 300px; 
+  }
+  
