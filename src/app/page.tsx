@@ -234,8 +234,8 @@ export default function Home() {
             setNewUser(true);
             setExistingUser(false);
           }}
-          className={`p-3 px-9  bg-slate-100 text-[#6c6d7099] font-bold focus:text-[#337ab7] ${
-            newUser == true ? "focus:bg-white" : ""
+          className={`p-3 px-9 text-[#337ab7] font-bold  ${
+            newUser == true ? "focus:bg-white focus:text-[#337ab7]" : "bg-slate-100 text-[#6c6d7099]"
           }`}
         >
           NEW USER
