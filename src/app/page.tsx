@@ -12,7 +12,9 @@ import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
-  const [carousel, setCarousel] = useState<{ image: string }[]>([]);
+  // const [carousel, setCarousel] = useState<{ image: string }[]>([]);
+  const [newUser, setNewUser] = useState<boolean>(true);
+  const [existingUser, setExistingUser] = useState<boolean>(false);
   return (
     <>
       {/* <div
@@ -224,6 +226,289 @@ export default function Home() {
           <CarouselNext />
           <CarouselPrevious />
         </Carousel>
+      </div>
+      {/* div for buttons */}
+      <div className="text-center">
+        <button
+          onClick={() => {
+            setNewUser(true);
+            setExistingUser(false);
+          }}
+          className={`p-3 px-9  bg-slate-100 text-[#6c6d7099] font-bold focus:text-[#337ab7] ${
+            newUser == true ? "focus:bg-white" : ""
+          }`}
+        >
+          NEW USER
+        </button>
+        <button
+          onClick={() => {
+            setExistingUser(true);
+            setNewUser(false);
+          }}
+          className="p-3 px-9 focus:bg-white bg-slate-100 text-[#6c6d7099] font-bold focus:text-[#337ab7]"
+        >
+          EXISTING USER
+        </button>
+      </div>
+      {/* Working of the divs when button is clicked */}
+      {newUser && (
+        <div className="text-center mt-10 px-[260px] mb-6 py-9">
+          <div className="font-extrabold text-3xl ">
+            <span className="text-[#337ab7]">WHY CHOOSE </span>
+            <span className="text-[#ed412d]">LIFE INSURANCE?</span>
+          </div>
+          <div className="text-sm mt-3">
+            You're in a good place today. Your family's happy. Work is going
+            well. Everything seems to be going according to plan. But, like they
+            say, the only thing you can be sure about in life is its
+            unpredictability.
+          </div>
+          <div className="text-sm mt-3 my-6">
+            With life insurance, you can ensure that your loved ones are taken
+            care of in case something unexpected happens tomorrow. So, do the
+            smart thing. Invest in the future of those who mean the world to
+            you. There’s immense peace of mind in knowing you’ve got them
+            covered.
+          </div>
+          <a
+            href="/products"
+            className="m-4 font-bold flex justify-center items-center text-[#ed412d] px-2 group hover:font-bold"
+          >
+            <span>KNOW MORE</span>
+            <span className="pl-1 group-hover:translate-x-5 duration-300">
+              <svg
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                x="10px"
+                y="10px"
+                viewBox="0 0 47.3 80.46"
+                xmlSpace="preserve"
+                className="inline-block h-3 w-3 "
+              >
+                <style type="text/css">
+                  {
+                    "\n        .st0 {\n            fill: #ed412d;\n        }\n\n    "
+                  }
+                </style>
+                <polygon
+                  className="st0"
+                  points="0,80.46 7.07,80.46 47.3,40.23 7.07,0 0,0 40.23,40.23 "
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      )}
+      {existingUser && (
+        <div className="text-center mt-10 px-[260px] mb-6 py-9">
+          <div className="font-extrabold text-3xl">
+            <span className="text-[#337ab7]">SERVICES FOR YOUR </span>
+            <span className="text-[#ed412d]">PEACE OF MIND</span>
+          </div>
+          <div className="flex flex-row justify-center items-center pt-9">
+            <div className="flex flex-col items-center justify-center mx-8 group">
+              <img
+                src="/login-to-customer-portal.svg"
+                className="h-[60px] w-[60px]"
+                alt="Login to customer portal"
+              />
+              <a href="#">
+                <div className="font-semibold text-[#337ab7] text-lg mt-3 group-hover:text-[#ed412d]">
+                  Login to
+                </div>
+                <div className="font-semibold text-[#337ab7] text-lg mt-0 group-hover:text-[#ed412d]">
+                  Customer Portal
+                </div>
+              </a>
+            </div>
+            <div className="flex flex-col items-center justify-center mx-8 group duration-300">
+              <img
+                src="/pay-premium.svg"
+                className="h-[60px] w-[60px]"
+                alt="Login to customer portal"
+              />
+              <a href="#">
+                <div className="font-semibold text-[#337ab7] text-lg mt-3 group-hover:text-[#ed412d]">
+                  Pay
+                </div>
+                <div className="font-semibold text-[#337ab7] text-lg group-hover:text-[#ed412d]">
+                  Premium
+                </div>
+              </a>
+            </div>
+            <div className="flex flex-col items-center justify-center mx-8 group duration-300">
+              <img
+                src="/download-statement.svg"
+                className="h-[60px] w-[60px]"
+                alt="Login to customer portal"
+              />
+              <a href="#">
+                <div className="font-semibold text-[#337ab7] text-lg mt-3 group-hover:text-[#ed412d]">
+                  Download
+                </div>
+                <div className="font-semibold text-[#337ab7] text-lg group-hover:text-[#ed412d]">
+                  Statement
+                </div>
+              </a>
+            </div>
+            <div className="flex flex-col items-center justify-center mx-8 group duration-300">
+              <img
+                src="/view-funds.svg"
+                className="h-[60px] w-[60px]"
+                alt="Login to customer portal"
+              />
+              <a href="#">
+                <div className="font-semibold text-[#337ab7] text-lg mt-3 group-hover:text-[#ed412d]">
+                  View
+                </div>
+                <div className="font-semibold text-[#337ab7] text-lg group-hover:text-[#ed412d]">
+                  Funds
+                </div>
+              </a>
+            </div>
+            <div className="flex flex-col items-center justify-center mx-8 group duration-300">
+              <img
+                src="/register-a-claim.svg"
+                className="h-[60px] w-[60px]"
+                alt="Login to customer portal"
+              />
+              <a href="#">
+                <div className="font-semibold text-[#337ab7] text-lg mt-3 group-hover:text-[#ed412d]">
+                  Register
+                </div>
+                <div className="font-semibold text-[#337ab7] text-lg group-hover:text-[#ed412d]">
+                  a Claim
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Blue Wallpaper part */}
+      <div className="bg-[url(../../public/financial-goal-bg.jpg)] bg-cover bg-center bg-no-repeat pb-[50px]">
+        <div className="text-center pt-16">
+          <div className="text-3xl font-extrabold text-white">
+            START CALCULATING FOR YOUR FINANCIAL GOALS
+          </div>
+          <div className="text-white m-3">
+            Here are some interactive tools and calculators to help you plan
+            your future effectively
+          </div>
+        </div>
+        <div className="flex flex-row justify-center items-center mt-14">
+          <div className="text-center justify-center px-12">
+            <img
+              src="/calculate-your-insurance-needs.svg"
+              alt=".."
+              className="h-[65px] pl-8"
+            />
+            <div className="flex flex-row justify-center items-center group">
+              <a href="#">
+                <div className="text-white mt-3 font-bold">
+                  <div>Calculate Your</div>
+                  <div>insurance needs</div>
+                </div>
+              </a>
+              <div>
+                <svg
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  x="10px"
+                  y="10px"
+                  viewBox="0 0 47.3 80.46"
+                  xmlSpace="preserve"
+                  className="inline-block h-3 w-3 ml-2 group-hover:translate-x-5 duration-300"
+                >
+                  <style type="text/css">
+                    {
+                      "\n        .st0 {\n            fill: #FFFFFF;\n        }\n\n    "
+                    }
+                  </style>
+                  <polygon
+                    className="st0"
+                    points="0,80.46 7.07,80.46 47.3,40.23 7.07,0 0,0 40.23,40.23 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="text-center justify-center px-12">
+            <img
+              src="/plan-your-childs-education.svg"
+              alt=".."
+              className="h-[65px] pl-8"
+            />
+            <div className="flex flex-row justify-center items-center group">
+              <div className="text-white mt-3 font-bold">
+                <a href="#">
+                  <div>Plan Your</div>
+                  <div>Child's Education</div>
+                </a>
+              </div>
+              <div>
+                <svg
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  x="10px"
+                  y="10px"
+                  viewBox="0 0 47.3 80.46"
+                  xmlSpace="preserve"
+                  className="inline-block h-3 w-3 ml-2 group-hover:translate-x-5 duration-300"
+                >
+                  <style type="text/css">
+                    {
+                      "\n        .st0 {\n            fill: #FFFFFF;\n        }\n\n    "
+                    }
+                  </style>
+                  <polygon
+                    className="st0"
+                    points="0,80.46 7.07,80.46 47.3,40.23 7.07,0 0,0 40.23,40.23 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="text-center justify-center px-12">
+            <img
+              src="/plan-your-retirement.svg"
+              alt=".."
+              className="h-[65px]"
+            />
+            <div className="flex flex-row justify-center items-center group">
+              <div className="text-white mt-3 font-bold">
+                <a href="#">
+                  <div>Plan Your</div>
+                  <div>Retirement</div>
+                </a>
+              </div>
+              <div>
+                <svg
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  x="10px"
+                  y="10px"
+                  viewBox="0 0 47.3 80.46"
+                  xmlSpace="preserve"
+                  className="inline-block h-3 w-3 ml-2 group-hover:translate-x-5 duration-300"
+                >
+                  <style type="text/css">
+                    {
+                      "\n        .st0 {\n            fill: #FFFFFF;\n        }\n\n    "
+                    }
+                  </style>
+                  <polygon
+                    className="st0"
+                    points="0,80.46 7.07,80.46 47.3,40.23 7.07,0 0,0 40.23,40.23 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
