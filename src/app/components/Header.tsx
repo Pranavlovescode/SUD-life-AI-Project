@@ -4,20 +4,36 @@ import React, { useState } from "react";
 import "./header.css";
 
 export default function Header() {
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
   const [firstDropdown, setFirstDropdown] = useState<boolean>(false);
   const [firstSubMenu, setFirstSubMenu] = useState<boolean>(false);
+  const [secondSubMenu, setSecondSubMenu] = useState<boolean>(false);
 
   return (
     <>
-      <header className="flex flex-row justify-between md:justify-center fixed z-50 w-full top-0 pb-3 bg-white">
-        <div className="mt-3">
+      <header
+        className={`flex flex-row justify-evenly md:justify-center items-start fixed z-50 w-full top-0 pb-3 bg-white ${
+          open
+            ? "justify-center h-[105px]"
+            : "justify-evenly w-full h-[60px] shadow-lg"
+        }`}
+      >
+        <div className="">
           <a href="/">
-            <img src="logo.png" alt="SUD" width={"170px"} />
+            <img
+              className={`${open ? "w-[170px] mt-3" : "w-[150px] mt-1"}`}
+              src="logo.png"
+              alt="SUD"
+              width={"170px"}
+            />
           </a>
         </div>
-        <div className="flex flex-col items-end justify-end px-14">
-          <div className="mx-2 bg-[#f5f5f5] p-2 rounded-md shadow-md">
+        <div
+          className={`flex flex-col items-end justify-end overflow-hidden md:overflow-visible md:top-0 ${
+            open ? "md:px-14 justify-center" : "md:pl-[394px] md:pr-14"
+          }`}
+        >
+          <div className="mx-2 bg-[#f5f5f5] p-2 rounded-md">
             <button className="bg-[#337ab7] p-2 text-white font-bold px-3 rounded-md mr-2">
               Pay Premium
             </button>
@@ -45,17 +61,18 @@ export default function Header() {
           </div>
           {open && (
             <div className="mt-4 text-[#337ab7] font-semibold flex text-[15px]">
-              <a
-                onMouseEnter={() => {
-                  setFirstDropdown(true);
-                }}
-                className="px-4 hover:border-b-2 hover:border-[#337ab7] cursor-pointer relative"
-              >
-                <span>BUY ONLINE</span>
+              <a className="px-4 hover:border-b-2 hover:border-[#337ab7] cursor-pointer relative">
+                <span
+                  onMouseEnter={() => {
+                    setFirstDropdown(true);
+                  }}
+                >
+                  BUY ONLINE
+                </span>
                 <div
                   className={`overflow-hidden max-h-0 transition-[max-height] duration-500 -left-[30px] ${
                     firstDropdown ? "max-h-[500px] " : ""
-                  } absolute left-0 mt-[10px] bg-gray-50 text-gray-500 w-72 pl-5 shadow-md`}
+                  } absolute left-0 mt-[10px] bg-[#f5f7fa] text-gray-500 w-72 pl-5 shadow-md`}
                   onMouseLeave={() => {
                     setFirstDropdown(false);
                   }}
@@ -91,8 +108,30 @@ export default function Header() {
                         </ul>
                       </div>
                     </li>
-                    <li className="py-2 hover:text-[#ed412d] duration-300">
-                      RETIREMENT & LONG TERM REGULAR INCOME
+                    <li className="py-2 duration-300">
+                      <span
+                        onMouseEnter={() => {
+                          setSecondSubMenu(true);
+                        }}
+                      >
+                        RETIREMENT & LONG TERM REGULAR INCOME
+                      </span>
+                      <div
+                        className={`overflow-hidden max-h-0 transition-[max-height] duration-500 ${
+                          secondSubMenu ? "max-h-[300px]" : ""
+                        } pl-5 sub-menu`}
+                      >
+                        <ul
+                          onMouseLeave={() => {
+                            setSecondSubMenu(false);
+                          }}
+                          className="flex flex-col text-[#ed412d]"
+                        >
+                          <li className="py-2">SUD LIFE CENTURY ROYALE</li>
+                          <li className="py-2">SUD LIFE RETIREMENT ROYALE</li>
+                          <li className="py-2">SUD LIFE CENTURY INCOME</li>
+                        </ul>
+                      </div>
                     </li>
                     <li className="py-2 hover:text-[#ed412d] duration-300">
                       PROTECTION PLAN
@@ -151,7 +190,9 @@ export default function Header() {
           onClick={() => {
             setOpen(!open);
           }}
-          className="block w-[60px] h-[60px] bg-[#ed412d] relative p-4 group md:hidden"
+          className={`block w-[60px] h-[60px] bg-[#ed412d] relative p-4 group overflow-hidden max-height-[60px] ${
+            open ? "max-height-[105px]" : ""
+          }`}
         >
           <span className="h-[2px] w-[24px] bg-[#ecf0f1] block absolute top-[18px]"></span>
           <span className="h-[2px] w-[18px] bg-[#ecf0f1] block top-[48%] absolute group-hover:w-[24px] duration-300"></span>
