@@ -143,7 +143,7 @@ export default function Header() {
                 </div>
               </a>
               <a
-                href="#"
+                href="/products"
                 className="px-4 hover:border-b-2 hover:border-[#337ab7]"
               >
                 PRODUCTS

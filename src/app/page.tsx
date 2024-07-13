@@ -275,7 +275,7 @@ export default function Home() {
             className="m-4 font-bold flex justify-center items-center text-[#ed412d] px-2 group hover:font-bold"
           >
             <span>KNOW MORE</span>
-            <span className="pl-1 group-hover:translate-x-5 duration-300">
+            <span className="pl-1">
               <svg
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -284,11 +284,11 @@ export default function Home() {
                 y="10px"
                 viewBox="0 0 47.3 80.46"
                 xmlSpace="preserve"
-                className="inline-block h-3 w-3 "
+                className="inline-block h-3 w-3 ml-2 group-hover:translate-x-5 duration-300"
               >
                 <style type="text/css">
                   {
-                    "\n        .st0 {\n            fill: #ed412d;\n        }\n\n    "
+                    "\n        .st0 {\n            fill:#ed412d;\n        }\n\n    "
                   }
                 </style>
                 <polygon
@@ -386,7 +386,7 @@ export default function Home() {
         </div>
       )}
       {/* Blue Wallpaper part */}
-      <div className="bg-[url(../../public/financial-goal-bg.jpg)] bg-cover bg-center bg-no-repeat pb-[50px]">
+      <div className="bg-[url(/financial-goal-bg.jpg)] bg-cover bg-center bg-no-repeat pb-[50px]">
         <div className="text-center pt-16">
           <div className="text-3xl font-extrabold text-white">
             START CALCULATING FOR YOUR FINANCIAL GOALS
