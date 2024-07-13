@@ -165,28 +165,28 @@ export default function Home() {
           </span>
         </button>
       </div> */}
-      <div className="m-4 mt-[105px] overflow-hidden w-full">
-        <Carousel plugins={[Autoplay({delay:2000})]}>
+      <div className="mb-4 mt-[105px] overflow-x-hidden w-full">
+        <Carousel plugins={[Autoplay({ delay: 2000 })]}>
           <CarouselContent>
-            <CarouselItem className="bg-background bg-center">
-              <Card>
-                <CardContent>
+            <CarouselItem>
+              <Card className="">
+                <CardContent className="w-full h-full bg-center">
                   <a href="#">
                     <img
                       src="/Centurion_Digital_Website_Banner.jpg"
                       alt="..."
-                      className=""
+                      className="w-full h-full object-cover"
                     />
                   </a>
                 </CardContent>
               </Card>
             </CarouselItem>
             <CarouselItem>
-              <Card>
-                <CardContent>
+              <Card className="p-0">
+                <CardContent className="w-full h-full bg-center">
                   <a href="#">
                     <img
-                      className="left-[40px]"
+                      className="w-full h-full object-cover"
                       src="/PS_Plus_Digital_Ver 02_Website_Banner.jpg"
                       alt="..."
                     />
@@ -195,24 +195,26 @@ export default function Home() {
               </Card>
             </CarouselItem>
             <CarouselItem>
-              <Card>
-                <CardContent>
+              <Card className="">
+                <CardContent className="w-full h-full bg-center">
                   <a href="#">
                     <img
                       src="/Website_Banner_Agency_Channel-1440x918px-v3-01.jpg"
                       alt="..."
+                      className="w-full h-full object-cover"
                     />
                   </a>
                 </CardContent>
               </Card>
             </CarouselItem>
             <CarouselItem>
-              <Card>
-                <CardContent>
+              <Card className="">
+                <CardContent className="w-full h-full bg-center">
                   <a href="#">
                     <img
                       src="/You_Matter_Digital V03_Website_Banner.jpg"
                       alt="..."
+                      className="w-full h-full object-cover"
                     />
                   </a>
                 </CardContent>
