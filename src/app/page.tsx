@@ -420,12 +420,7 @@ export default function Home() {
                   viewBox="0 0 47.3 80.46"
                   xmlSpace="preserve"
                   className="inline-block h-3 w-3 ml-2 group-hover:translate-x-5 duration-300"
-                >
-                  <style type="text/css">
-                    {
-                      "\n        .st0 {\n            fill: #FFFFFF;\n        }\n\n    "
-                    }
-                  </style>
+                >                  
                   <polygon
                     className="st0"
                     points="0,80.46 7.07,80.46 47.3,40.23 7.07,0 0,0 40.23,40.23 "

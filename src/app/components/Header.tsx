@@ -8,6 +8,7 @@ export default function Header() {
   const [firstDropdown, setFirstDropdown] = useState<boolean>(false);
   const [firstSubMenu, setFirstSubMenu] = useState<boolean>(false);
   const [secondSubMenu, setSecondSubMenu] = useState<boolean>(false);
+  const [aboutUsDropdown, setAboutUsDropdown] = useState<boolean>(false);
 
   return (
     <>
@@ -146,13 +147,48 @@ export default function Header() {
                 href="/products"
                 className="px-4 hover:border-b-2 hover:border-[#337ab7]"
               >
-                PRODUCTS
+                <span
+                  onMouseEnter={() => {
+                    setFirstDropdown(true);
+                  }}
+                >
+                  PRODUCTS
+                </span>
               </a>
               <a
                 href="/about_us"
                 className="px-4 hover:border-b-2 hover:border-[#337ab7]"
               >
-                ABOUT US
+                <span
+                  onMouseEnter={() => {
+                    setAboutUsDropdown(true);
+                  }}
+                >
+                  ABOUT US
+                </span>
+                <div
+                  className={`overflow-hidden max-h-0 transition-[max-height] duration-500 ${
+                    aboutUsDropdown ? "max-h-[500px] " : ""
+                  } absolute left-[550px] mt-[10px] bg-[#f5f7fa] text-gray-500 w-72 pl-5 shadow-md`}
+                  onMouseLeave={() => {
+                    setAboutUsDropdown(false);
+                  }}
+                >
+                  <ul className="p-4">
+                    <li className="py-2 hover:text-[#ed412d] duration-300">
+                      <a href="/about_us">BOARD OF DIRECTORS</a>
+                    </li>
+                    <li className="py-2 hover:text-[#ed412d] duration-300">
+                      <a href="/our_vision">KEY MANAGEMENT PERSONS</a>
+                    </li>
+                    <li className="py-2 hover:text-[#ed412d] duration-300">
+                      <a href="/our_board">CSR</a>
+                    </li>
+                    <li className="py-2 hover:text-[#ed412d] duration-300">
+                      <a href="/our_management">PUBLIC DISCLOSURES</a>
+                    </li>
+                  </ul>
+                </div>
               </a>
               <a
                 href="#"
